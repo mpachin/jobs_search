@@ -47,3 +47,8 @@ psql \
   -U postgres \
   -c "\copy professions from '/tmp/$PROFESSIONS_CSV_FILENAME.csv' delimiter ',' csv header;" \
   -d "$PGDATABASE"
+
+psql \
+  -U postgres \
+  -c "alter table jobs add column id serial primary key;" \
+  -d "$PGDATABASE"
