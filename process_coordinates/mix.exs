@@ -28,6 +28,7 @@ defmodule ProcessCoordinates.MixProject do
       {:ecto_sql, "~> 3.4"},
       {:postgrex, ">= 0.0.0"},
       {:geo_postgis, "~> 3.4"},
+      {:table_rex, "~> 3.1.1"},
     ]
   end
 end
