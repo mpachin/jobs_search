@@ -1,0 +1,19 @@
+FROM python:slim
+
+ARG PROFESSIONS_CSV_ID
+ARG JOBS_CSV_ID
+
+# Install postgres
+RUN apt-get update \
+  && apt-get install -y postgresql
+
+# Download csv files from google drive
+WORKDIR /tmp
+RUN pip3 install gdown
+ENV DRIVE_URL=https://drive.google.com/uc?id=
+RUN gdown $DRIVE_URL$PROFESSIONS_CSV_ID \
+  && gdown $DRIVE_URL$JOBS_CSV_ID
+
+# Run setup script from bind docker volume during container run
+RUN mkdir -p /entrypoint
+ENTRYPOINT ["bash", "/entrypoint/db_setup_entrypoint.sh"]
