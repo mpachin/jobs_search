@@ -13,6 +13,12 @@ SQL databases can be used for transactions and relational data model which gives
 
 In the given link above there is a bunch of other performance optimization I'm not familiar with, but I believe that it would be interesting challenge to solve this issue if I ever run into such.
 
+---
+
+One of the possible solutions to speed up search upon large amount of rows (100 000 000+) - is to split this data into different sets and mark it up. In our case we can do this [by calculating and setting continent column for each row](../process_coordinates/priv/repo/migrations/20210517180932_populate_jobs_locations.exs) and then later [use it by calculating target point's location (continent)](../job_offers_api/lib/job_offers_api/jobs.ex), retrieving target id and using this id to first search jobs in the same continent, before using more computational heavy approaches for narrowing search results further through Pythagoras or Haversine formulas.
+
+With more data at hand we could mark polygons further for countries and cities, set correspondent ids for each row in `jobs` table, and rely on that data to discard as much data as possible before computing distances between points.
+
 # NoSQL DBs
 
 Unlike SQL DBs, NoSQL DBs gives us ability to scale horizontally. That allows us to handle workload by increasing the amount of machines in cluster instead of relying on capacity of single server machine. However this comes with a price - our data cannot be strongly consistent anymore, since cluster nodes handle data transformation in parallel. NoSQL provides eventual data consistency instead of strong data consistency.
