@@ -1,18 +1,6 @@
 # ProcessCoordinates
 
-## Installation
-
-On the first use make sure to install project dependencies with:
-
-```
-mix deps.get
-```
-
-And then run migrations:
-
-```
-mix ecto.migrate
-```
+That app prints table with the count of job offers per profession category per continent.
 
 ## How it works
 

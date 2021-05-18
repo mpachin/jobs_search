@@ -7,7 +7,8 @@ defmodule ProcessCoordinates.MixProject do
       version: "0.1.0",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      aliases: aliases()
     ]
   end
 
@@ -29,6 +30,12 @@ defmodule ProcessCoordinates.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:geo_postgis, "~> 3.4"},
       {:table_rex, "~> 3.1.1"},
+    ]
+  end
+
+  defp aliases do
+    [
+      group_jobs: ["run -e ProcessCoordinates.ContinentsGrouping.group_jobs_by_continents"],
     ]
   end
 end

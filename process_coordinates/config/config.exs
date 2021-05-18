@@ -9,4 +9,7 @@ config :process_coordinates, ProcessCoordinates.Repo,
   database: System.get_env("PGDATABASE"),
   hostname: "postgres",
   adapter: Ecto.Adapters.Postgres,
-  types: ProcessCoordinates.PostgresTypes
+  types: ProcessCoordinates.PostgresTypes,
+  log: false
+
+config :logger, level: :info

@@ -1,6 +1,25 @@
 version: '2.4'
 
 services:
+  api:
+    tty: true
+    stdin_open: true
+    build:
+      context: job_offers_api
+      dockerfile: Dockerfile
+    volumes:
+      - ./job_offers_api:/app
+    ports:
+      - '80:4000'
+    environment:
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PGHOST: postgres
+      PGDATABASE: noveo
+    depends_on:
+      postgres:
+        condition: service_healthy
+
   process_coordinates:
     tty: true
     stdin_open: true

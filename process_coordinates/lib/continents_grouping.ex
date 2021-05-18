@@ -18,7 +18,6 @@ defmodule ProcessCoordinates.ContinentsGrouping do
       categories: [],
       continents_jobs: %{}
     }, fn continent, acc ->
-      IO.inspect(continent)
       continent_jobs = from(
         job in Jobs,
         join: continent in Continent, on: st_within(job.location, continent.polygon),
