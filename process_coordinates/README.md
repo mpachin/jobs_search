@@ -1,3 +1,5 @@
+## [Back to project README](../README.md)
+
 # ProcessCoordinates
 
 That app prints table with the count of job offers per profession category per continent.

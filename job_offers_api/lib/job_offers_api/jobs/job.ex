@@ -1,7 +1,7 @@
-defmodule ProcessCoordinates.Jobs do
+defmodule JobOffersApi.Jobs.Job do
   use Ecto.Schema
   import Ecto.Changeset
-  alias ProcessCoordinates.Continent
+  alias JobOffersApi.Continent
 
   schema "jobs" do
     field :profession_id, :integer
@@ -11,10 +11,5 @@ defmodule ProcessCoordinates.Jobs do
     field :office_longitude, :float
     field :location, Geo.PostGIS.Geometry
     belongs_to :continent, Continent
-  end
-
-  def changeset(job, attrs) do
-    job
-    |> cast(attrs, [:profession_id, :contract_type, :name, :office_latitude, :office_longitude, :location])
   end
 end

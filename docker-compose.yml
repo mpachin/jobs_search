@@ -15,7 +15,7 @@ services:
       PGUSER: postgres
       PGPASSWORD: postgres
       PGHOST: postgres
-      PGDATABASE: noveo
+      PGDATABASE: jobs_search
     depends_on:
       postgres:
         condition: service_healthy
@@ -32,7 +32,7 @@ services:
       PGUSER: postgres
       PGPASSWORD: postgres
       PGHOST: postgres
-      PGDATABASE: noveo
+      PGDATABASE: jobs_search
     depends_on:
       postgres:
         condition: service_healthy
@@ -53,7 +53,7 @@ services:
       PGUSER: postgres
       PGPASSWORD: postgres
       PGHOST: postgres
-      PGDATABASE: noveo
+      PGDATABASE: jobs_search
       JOBS_CSV_FILENAME: 'technical-test-jobs'
       PROFESSIONS_CSV_FILENAME: 'technical-test-professions'
     depends_on:

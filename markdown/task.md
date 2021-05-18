@@ -1,3 +1,5 @@
+## [Back to project README](../README.md)
+
 # APPENDICES
 
 You will find enclosed to this document, 2 files: https://drive.google.com/drive/folders/1b9VnNTsnLBQrX6aScLxuFQDY1yW26SBG?usp=sharing 
@@ -22,7 +24,7 @@ Example:
 
 ![result table](./result_table.png)
 
-## 02 / 03 . Question: Scaling ?
+## 02 / 03 . Question: Scaling?
 
 Now, let’s imagine we have 100 000 000 job offers in our database, and 1000 new job offers per second (yeah, it’s a lot coming in!). What do you implement if we want the same output than in the previous exercise in real-time?
 

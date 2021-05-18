@@ -1,20 +1,11 @@
+## [Back to project README](../README.md)
+
 # JobOffersApi
 
-To start your Phoenix server:
+That app starts Phoenix server with single api endpoint at `/api/jobs?latitude=46.2276&longitude=2.2137&radius=40`.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `npm install` inside the `assets` directory
-  * Start Phoenix endpoint with `mix phx.server`
+As in example above this api will accept `latitude`, `longitude` and `radius` query parameters.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## How it works
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+That app relies on pre-configured PostgreSQL database (which is done by previous steps) which uses [PostGIS](https://postgis.net/) extension. With the help of [geo_postgis](https://github.com/bryanjos/geo_postgis) it provides an api to search for nearest jobs in given radius and calculates distance to that locations.

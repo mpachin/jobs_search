@@ -5,6 +5,7 @@ defmodule ProcessCoordinates.Repo.Migrations.AlterJobsAddLocation do
   def change do
     alter table(:jobs) do
       add :location, :geometry
+      add :continent_id, references(:continents, on_delete: :nothing)
     end
   end
 end

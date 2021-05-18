@@ -7,7 +7,8 @@ config :job_offers_api, JobOffersApi.Repo,
   database: System.get_env("PGDATABASE"),
   hostname: "postgres",
   show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  pool_size: 10,
+  types: JobOffersApi.PostgresTypes
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
